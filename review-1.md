@@ -10,7 +10,7 @@ Este aplicativo resuelve las necesidades de las personas que les gusta anotar la
 - Facil visualización.
 
 
-
+--- 
 
 
 ## ¿Cuáles son las funcionalidades más importantes y porque los usuarios las usarían?
@@ -30,7 +30,7 @@ En el momento este aplicativo cuenta con las siguientes funcionalidades:
 
 4. 🔍       Fácil visualización de cada tarea, al pasar el mouse encima de ella, se AMPLIA!.
 
-
+--- 
 
 
 
@@ -43,3 +43,6 @@ En el momento este aplicativo cuenta con las siguientes funcionalidades:
 🏗️ Funcionalidad de Editar tarea
 
 🏗️ Botón BORRAR todas las tareas
+
+
+---
