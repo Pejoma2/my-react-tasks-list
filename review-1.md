@@ -2,6 +2,8 @@
 
 Proyecto Integrador De la escuela ADA.
 
+
+--- 
 ## ¿Qué es mi producto y para que sirve?
 Este aplicativo resuelve las necesidades de las personas que les gusta anotar las tareas que deben hacer. 
 
