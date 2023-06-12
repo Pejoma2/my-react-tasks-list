@@ -16,7 +16,10 @@ Este aplicativo resuelve las necesidades de las personas que les gusta anotar la
 
 En el momento este aplicativo cuenta con las siguientes funcionalidades:
 
-1. Agregar Tareas
-2. Facilidad de agregar un tarea ya sea con un click en el botón ➕ o un enter del teclado ⌨
-3. Marcar tareas Realizadas ✔
-4. Fácil visualización de cada tarea, al pasar el mouse encima de ella se amplia!
+1. ➕       Agregar Tareas 
+
+2. ⌨ 🖱️    Facilidad de agregar una tarea ya sea con un click en el botón ➕ o un enter del teclado
+
+3. ✔        Marcar tareas Realizadas 
+
+4. 🔍       Fácil visualización de cada tarea, al pasar el mouse encima de ella se amplia!
