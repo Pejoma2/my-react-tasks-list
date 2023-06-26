@@ -1,4 +1,5 @@
 import { useState,useEffect } from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 
 export const useTask = () => {
@@ -12,6 +13,8 @@ export const useTask = () => {
          }
     
       }, [])
+
+      
     
     
     useEffect(() => {
@@ -19,12 +22,12 @@ export const useTask = () => {
     }, [itemTarea])
 
 
-    let index = itemTarea.length + 1;
+    let index = uuidv4();
 
-  function createTask(taskname) {
+  function createTask(taskname, descripcion) {
 
     if(!itemTarea.find((task) => task.nombre === taskname)){
-          setItemTarea([...itemTarea, { nombre: taskname, estado: false, id: index }]);
+          setItemTarea([...itemTarea, { nombre: taskname, estado: false, id: index, descripcion: descripcion  }]);
     }else{
         alert("TareApp REPETIDA \n \n \nPor favor \nELIGE UN NOMBRE DIFERENTE")
     }
@@ -54,6 +57,16 @@ export const useTask = () => {
   };
 
 
+console.log(itemTarea);
+
+  const totalTaskCount = () => {
+    let counter = itemTarea.length;
+    //console.log(counter)
+    return counter
+
+  }
+
+
 
 
 
@@ -63,6 +76,7 @@ export const useTask = () => {
         deleteTask,
         editTask,
         toggleTask,
-        deleteAllTask
+        deleteAllTask,
+        totalTaskCount,
     }
 }

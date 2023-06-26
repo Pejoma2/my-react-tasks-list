@@ -1,43 +1,52 @@
-import { useState } from "react";
-
-//Funcion creadora de Tareas a partir de un input
+import { useForm } from "react-hook-form";
 
 // eslint-disable-next-line react/prop-types
 export default function TaskCreator({ createNewTask }) {
-  const [nuevaTareApp, setNuevaTareApp] = useState("");
+  const registerOptions = {
+    tarea: {
+      required: "Ingresa una TareApp",
+      minLength: {
+        value: 3,
+        message: "Tu TareApp debe tener más de 3 letras",
+      },
+    },
+  };
 
-  const [nuevaDescripcion, setNuevaDescripcion] = useState("");
+  const { register, handleSubmit, formState: { errors }, reset } = useForm({ mode: "onChange" });
 
-  
-  //console.log(propiedades.createNewTask)
-  //funcion que -maneja el envío del formulario -almacena el valor ingresado en el campo de entrada en el almacenamiento local -borra el contenido del campo de entrada.
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    createNewTask(nuevaTareApp);
-    //localStorage.setItem("task", nuevaTareApp);
-    setNuevaTareApp("");
+  const onSubmit = (data) => {
+    createNewTask(data.tarea, data.descripcion);
+    reset();
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <input
+        name="tarea"
         id="nueva-tareapp"
         className="nueva-tarea"
         type="text"
         placeholder="Ingresa nueva TareApp"
-        value={nuevaTareApp}
-        onChange={(e) => setNuevaTareApp(e.target.value)}
+        defaultValue=""
+        {...register("tarea", registerOptions.tarea)}
       />
-     
-     
-      <input 
-        type="text"
+      {errors.tarea && (
+        <span className="error" role="alert">
+          {errors.tarea.message}
+        </span>
+      )}
+
+      <input
+        name="descripcion"
+        id="nueva-descripcion"
         className="nueva-tarea"
+        type="text"
         placeholder="Descripcion de la TareApp"
-        value={nuevaDescripcion}
-         />
+        defaultValue=""
+        {...register("descripcion")}
+      />
       <button className="button-agregar">+</button>
-      
     </form>
   );
 }
+

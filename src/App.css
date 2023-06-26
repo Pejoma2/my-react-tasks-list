@@ -149,6 +149,17 @@
 }
 
 
+.error{
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-left: 100px;
+  
+}
+
+
 
 
 
