@@ -20,6 +20,7 @@ export const useTask = () => {
 
 
     let index = itemTarea.length + 1;
+
   function createTask(taskname) {
 
     if(!itemTarea.find((task) => task.nombre === taskname)){
@@ -32,6 +33,10 @@ export const useTask = () => {
 
   const deleteTask = (taskToDelete) => {
     setItemTarea(itemTarea.filter((t) => t.nombre !== taskToDelete.nombre));
+  }
+
+  const deleteAllTask = () => {
+    setItemTarea([]);
   }
 
 
@@ -57,6 +62,7 @@ export const useTask = () => {
         createTask,
         deleteTask,
         editTask,
-        toggleTask
+        toggleTask,
+        deleteAllTask
     }
 }

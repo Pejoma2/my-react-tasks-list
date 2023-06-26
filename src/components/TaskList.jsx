@@ -4,8 +4,14 @@ import { useTask } from "../hooks/useTask";
 
 export default function TaskList() {
 
-  const {itemTarea, createTask, deleteTask, editTask, toggleTask} = useTask();
-    
+  const {itemTarea, createTask, deleteTask, editTask, toggleTask, deleteAllTask} = useTask();
+  
+
+  const handleDeleteAllTask = () => {
+    if (window.confirm("Esta seguro de BORRAR TODAS las tareas?")) {
+      deleteAllTask();
+    }
+  };
 
   return (
     <ul>
@@ -18,8 +24,10 @@ export default function TaskList() {
                 key={tarea.id} 
                 toggleTask={toggleTask}
                 deleteTask={deleteTask}
-                editTask={editTask}/>
+                editTask={editTask}
+                />
       ))}
+      <button className="borrar-todo" onClick={handleDeleteAllTask}>Borrar Todo</button>
     </ul>
   );
 }

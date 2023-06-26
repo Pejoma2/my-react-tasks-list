@@ -1,7 +1,7 @@
 export default function TaskList(){
     
     return(
-        <h1>TareApp</h1>
+        <h1 className="titulo">TareApp</h1>
     )
 
 }

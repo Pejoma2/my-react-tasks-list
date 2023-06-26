@@ -6,6 +6,8 @@ import { useState } from "react";
 export default function TaskCreator({ createNewTask }) {
   const [nuevaTareApp, setNuevaTareApp] = useState("");
 
+  const [nuevaDescripcion, setNuevaDescripcion] = useState("");
+
   
   //console.log(propiedades.createNewTask)
   //funcion que -maneja el envío del formulario -almacena el valor ingresado en el campo de entrada en el almacenamiento local -borra el contenido del campo de entrada.
@@ -26,7 +28,16 @@ export default function TaskCreator({ createNewTask }) {
         value={nuevaTareApp}
         onChange={(e) => setNuevaTareApp(e.target.value)}
       />
+     
+     
+      <input 
+        type="text"
+        className="nueva-tarea"
+        placeholder="Descripcion de la TareApp"
+        value={nuevaDescripcion}
+         />
       <button className="button-agregar">+</button>
+      
     </form>
   );
 }
