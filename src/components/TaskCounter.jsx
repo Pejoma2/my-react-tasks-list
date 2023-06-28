@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 
 
+// eslint-disable-next-line react/prop-types
 export default function TaskCounter({itemTarea}) {
   
   
@@ -11,12 +12,14 @@ export default function TaskCounter({itemTarea}) {
 
 
    useEffect(() => {
+     // eslint-disable-next-line react/prop-types
      const pendingTask = itemTarea.filter((task => !task.estado));
      const totalPendingTasks = pendingTask.length;
      setCountPendingTask(totalPendingTasks)
    }, [itemTarea])
 
    useEffect(() => {
+    // eslint-disable-next-line react/prop-types
     const totalcountTasks = itemTarea.length;
     setCountTask(totalcountTasks)
   }, [itemTarea])
