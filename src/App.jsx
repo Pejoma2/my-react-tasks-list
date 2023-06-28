@@ -14,7 +14,7 @@ function App() {
     <>
       <Header/>
       <TaskList/>
-      <TaskCounter/>
+      
     </>
   );
 }

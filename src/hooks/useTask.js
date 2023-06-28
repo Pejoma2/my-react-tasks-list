@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 export const useTask = () => {
 
     const [itemTarea, setItemTarea] = useState([]);
+ 
 
     useEffect(() => {
         let data = localStorage.getItem("tasks")
@@ -20,6 +21,9 @@ export const useTask = () => {
     useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(itemTarea));
     }, [itemTarea])
+
+
+
 
 
     let index = uuidv4();
@@ -57,14 +61,13 @@ export const useTask = () => {
   };
 
 
-console.log(itemTarea);
+//console.log(itemTarea);
 
-  const totalTaskCount = () => {
-    let counter = itemTarea.length;
-    //console.log(counter)
-    return counter
+  // const totalTaskCount = () => {
+  //   let counter = itemTarea.length;
+  //   return counter
 
-  }
+  // }
 
 
 
@@ -77,6 +80,5 @@ console.log(itemTarea);
         editTask,
         toggleTask,
         deleteAllTask,
-        totalTaskCount,
     }
 }

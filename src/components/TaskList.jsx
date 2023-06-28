@@ -1,6 +1,7 @@
 import TaskCreator from "./TaskCreator";
 import Task from "./Task";
 import { useTask } from "../hooks/useTask";
+import TaskCounter from "./TaskCounter";
 
 export default function TaskList() {
 
@@ -28,6 +29,8 @@ export default function TaskList() {
                 />
       ))}
       <button className="borrar-todo" onClick={handleDeleteAllTask}>Borrar Todo</button>
+
+      <TaskCounter itemTarea={itemTarea}/>
     </ul>
   );
 }
