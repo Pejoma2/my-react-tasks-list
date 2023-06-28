@@ -104,3 +104,8 @@ button:focus-visible {
   background-color: #f0f0f2;
   list-style-position: inside;
 }
+
+.navbar .active {
+  background-color: #6b6969;
+  color: whitesmoke;
+}

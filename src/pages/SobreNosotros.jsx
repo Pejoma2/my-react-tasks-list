@@ -1,10 +1,10 @@
-import Menu from "../components/Menu";
+
 
 
 export default function SobreNosotros() {
   return (
     <div>
-      <Menu/>
+      
       <h1>Sobre Nosotros</h1><br />
       <h4>Con este aplicativo Web podrás llevar registro de tus tareas de una manera muy sencilla</h4><br />
       <h4>Tendras acceso a estas funcionalidades:</h4>
