@@ -4,8 +4,8 @@ import Menu from "../components/Menu";
 export default function Home() {
   return (
     <div>
-      <Menu />
-      <Header />
+      <Menu /><br />
+      <Header /><br />
       <h3>Bienvenido a TareAPP</h3>
       <p>
         Con este aplicativo Web podrás llevar un control de tus tareas
