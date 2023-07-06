@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { Button, Input } from '@chakra-ui/react'
 
 // eslint-disable-next-line react/prop-types
 export default function TaskCreator({ createNewTask }) {
@@ -21,7 +22,11 @@ export default function TaskCreator({ createNewTask }) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <input
+      <Input
+        w="95%"
+        mt="50px"
+        _placeholder={{ color: 'black', fontWeight: 'semibold' }}
+        //variant="outline"
         name="tarea"
         id="nueva-tareapp"
         className="nueva-tarea"
@@ -36,7 +41,9 @@ export default function TaskCreator({ createNewTask }) {
         </span>
       )}
 
-      <input
+      <Input
+        w="95%"
+        _placeholder={{ color: 'black', fontWeight: 'semibold' }}
         name="descripcion"
         id="nueva-descripcion"
         className="nueva-tarea"
@@ -45,7 +52,7 @@ export default function TaskCreator({ createNewTask }) {
         defaultValue=""
         {...register("descripcion")}
       />
-      <button className="button-agregar">+</button>
+      <button className="button-agregar">AGREGAR</button>
     </form>
   );
 }

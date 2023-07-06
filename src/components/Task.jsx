@@ -1,6 +1,7 @@
 //import { useState, useEffect } from "react";
 import { useState } from "react";
 import { FaEdit, FaTrash } from "react-icons/fa";
+import { Input } from '@chakra-ui/react'
 
 // eslint-disable-next-line react/prop-types
 export default function Task({ tarea, toggleTask, deleteTask, editTask }) {

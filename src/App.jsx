@@ -5,6 +5,7 @@ import SobreNosotros from "./pages/SobreNosotros";
 import Tareas from "./pages/Tareas";
 import PageNotFound from "./pages/PageNotFound";
 import Menu from "./components/Menu";
+import { Box } from "@chakra-ui/react";
 
 function App() {
 
@@ -13,6 +14,13 @@ function App() {
 
   return (
     <>
+    <Box
+      bgColor="#fafafa"
+      borderRadius="10px"
+      p="10px"
+      w="55vw"
+      
+      >
       <BrowserRouter>
       <Menu/>
         <Routes>
@@ -25,6 +33,7 @@ function App() {
 
         </Routes>
       </BrowserRouter>
+    </Box>
       
     </>
   );
