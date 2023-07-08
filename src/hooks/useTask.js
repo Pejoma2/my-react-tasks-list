@@ -27,11 +27,14 @@ export const useTask = () => {
 
 
     let index = uuidv4();
+    
 
   function createTask(taskname, descripcion) {
 
-    if(!itemTarea.find((task) => task.nombre === taskname)){
-          setItemTarea([...itemTarea, { nombre: taskname, estado: false, id: index, descripcion: descripcion  }]);
+    let taskUpperCase = taskname.toUpperCase();
+
+    if(!itemTarea.find((task) => task.nombre === taskUpperCase)){
+          setItemTarea([...itemTarea, { nombre: taskUpperCase, estado: false, id: index, descripcion: descripcion  }]);
     }else{
         alert("TareApp REPETIDA \n \n \nPor favor \nELIGE UN NOMBRE DIFERENTE")
     }
@@ -48,8 +51,10 @@ export const useTask = () => {
 
 
   const editTask = (editedTask, id) => {
+    
+    let editedTaskUpperCase = editedTask.toUpperCase();
     setItemTarea(
-    itemTarea.map((task) => (task.id === id ? {...task, nombre: editedTask} : task))
+    itemTarea.map((task) => (task.id === id ? {...task, nombre: editedTaskUpperCase} : task))
     
   )}
 

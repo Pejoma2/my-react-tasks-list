@@ -58,10 +58,10 @@ export default function Task({ tarea, toggleTask, deleteTask, editTask }) {
         </span>
         <span className="contenedor-botones">
           <button className="boton-edit" onClick={() => handleEditing()}>
-            <FaEdit size="1.6em"/>
+            <FaEdit size="1.6em" style={{ opacity: 0.7}}/>
           </button>
           <button className="boton-borrar" onClick={() => handleDeleteTask()}>
-            <FaTrash size="1.6em"/>
+            <FaTrash size="1.6em" style={{ opacity: 0.7}}/>
           </button>
         </span>
       </div>
