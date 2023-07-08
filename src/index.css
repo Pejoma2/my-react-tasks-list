@@ -106,8 +106,13 @@ button:focus-visible {
 .navbar .active {
   background-color: #6b6969;
   color: whitesmoke;
+  border-radius: 8px ;
 }
 
 .titulo{
   margin: 150px 0;
+}
+
+.sobre-nosotros{
+  margin: 80px 0;
 }

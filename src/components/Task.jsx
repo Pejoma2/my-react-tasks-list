@@ -1,7 +1,6 @@
 //import { useState, useEffect } from "react";
 import { useState } from "react";
 import { FaEdit, FaTrash } from "react-icons/fa";
-import { Input } from '@chakra-ui/react'
 
 // eslint-disable-next-line react/prop-types
 export default function Task({ tarea, toggleTask, deleteTask, editTask }) {
@@ -44,6 +43,8 @@ export default function Task({ tarea, toggleTask, deleteTask, editTask }) {
       id="tarea"
       className={tarea.estado ? "tarea-completada" : "tarea"}
       key={tarea.nombre}
+      style={{ height: "fit-content" }}
+      
     >
       {" "}
       <div style={viewMode}>
@@ -57,10 +58,10 @@ export default function Task({ tarea, toggleTask, deleteTask, editTask }) {
         </span>
         <span className="contenedor-botones">
           <button className="boton-edit" onClick={() => handleEditing()}>
-            <FaEdit />
+            <FaEdit size="1.6em"/>
           </button>
           <button className="boton-borrar" onClick={() => handleDeleteTask()}>
-            <FaTrash />
+            <FaTrash size="1.6em"/>
           </button>
         </span>
       </div>

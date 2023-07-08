@@ -10,6 +10,10 @@ export default function TaskCreator({ createNewTask }) {
         value: 3,
         message: "Tu TareApp debe tener más de 3 letras",
       },
+      maxLength: {
+        value: 40,
+        message: "Tu TareApp MAXIMO debe tener 40 letras",
+      }
     },
   };
 
@@ -23,9 +27,10 @@ export default function TaskCreator({ createNewTask }) {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Input
+        borderColor="black"
         w="95%"
         mt="50px"
-        _placeholder={{ color: 'black', fontWeight: 'semibold' }}
+        _placeholder={{ color: 'black', fontWeight: 'semibold', opacity: 0.3}}
         //variant="outline"
         name="tarea"
         id="nueva-tareapp"
@@ -42,8 +47,9 @@ export default function TaskCreator({ createNewTask }) {
       )}
 
       <Input
+        borderColor="black"
         w="95%"
-        _placeholder={{ color: 'black', fontWeight: 'semibold' }}
+        _placeholder={{ color: 'black', fontWeight: 'semibold', opacity: 0.3}}
         name="descripcion"
         id="nueva-descripcion"
         className="nueva-tarea"

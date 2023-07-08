@@ -5,7 +5,7 @@ export default function SobreNosotros() {
   return (
     <div>
       
-      <h1>Sobre Nosotros</h1><br />
+      <h1 className="sobre-nosotros">Sobre Nosotros</h1><br />
       <h4>Con este aplicativo Web podrás llevar registro de tus tareas de una manera muy sencilla</h4><br />
       <h4>Tendras acceso a estas funcionalidades:</h4>
       <ul className="lista-funcionalidades">
