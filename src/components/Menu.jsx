@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Stack } from "@chakra-ui/react";
+import { Flex, Heading, Stack } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 
 export default function Menu() {
@@ -17,18 +17,18 @@ export default function Menu() {
       <nav className="navbar">
         <ul>
           <li>
-            <Heading textTransform="uppercase">
+            <Heading size="xs">
               <NavLink to="/">Home</NavLink>
             </Heading>
           </li>
           <li>
-            <Heading textTransform="uppercase">
-              <NavLink to="/SobreNosotros">Sobre Nosotros</NavLink>
+            <Heading size="xs">
+              <NavLink to="/SobreNosotros">Sobre TareApp</NavLink>
             </Heading>
           </li>
           <li>
-            <Heading>
-              <NavLink to="/Tareas">Lista Tareas</NavLink>
+            <Heading size="xs">
+              <NavLink to="/Tareas">Tareas</NavLink>
             </Heading>
           </li>
         </ul>

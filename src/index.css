@@ -108,3 +108,7 @@ button:focus-visible {
   background-color: #6b6969;
   color: whitesmoke;
 }
+
+.titulo{
+  margin: 150px 0;
+}
