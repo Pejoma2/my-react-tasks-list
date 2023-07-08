@@ -18,7 +18,7 @@ function App() {
       bgColor="#fafafa"
       borderRadius="10px"
       p="10px"
-      w="55vw"
+      w="27vw"
       
       >
       <BrowserRouter>

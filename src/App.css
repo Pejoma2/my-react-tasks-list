@@ -87,7 +87,7 @@
 
 .button-agregar {
   background-color: rgb(180, 180, 228);
-  margin: 7px;
+  margin: 20px;
   transition: transform 0.2s ease-in-out;
 }
 
