@@ -5,8 +5,17 @@ import { Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, 
 
 // eslint-disable-next-line react/prop-types
 export default function Task({ tarea, toggleTask, deleteTask, editTask }) {
+
+  const [flipped, setFlipped] = useState(false);
   
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+
+
+  const handleDoubleClick = () => {
+    setFlipped(!flipped);
+  };
+
 
   const handleDeleteTask = () => {
     
@@ -39,6 +48,12 @@ export default function Task({ tarea, toggleTask, deleteTask, editTask }) {
     editMode.display = "none";
   }
 
+
+
+
+
+
+
   return (
     // eslint-disable-next-line react/prop-types
     <li
@@ -46,18 +61,22 @@ export default function Task({ tarea, toggleTask, deleteTask, editTask }) {
       className={tarea.estado ? "tarea-completada" : "tarea"}
       key={tarea.nombre}
       style={{ height: "fit-content" }}
+      onDoubleClick={handleDoubleClick}
       
     >
       {" "}
       <div style={viewMode}>
-        <span>
+        <span style={flipped ? { fontSize: "30px", color: "rgb(100, 100, 153)"} : {}}>
           <input
             type="checkbox"
             checked={tarea.estado}
             onChange={() => toggleTask(tarea)}
           />
-          {tarea.nombre}
+          {flipped ? (<div><p>Descripcion:</p><br />{tarea.descripcion.toLowerCase()}</div>) : tarea.nombre}
         </span>
+
+
+      {!flipped &&(
         <span className="contenedor-botones">
           <button className="boton-edit" onClick={() => handleEditing()}>
             <FaEdit size="1.6em" style={{ opacity: 0.7}}/>
@@ -78,12 +97,9 @@ export default function Task({ tarea, toggleTask, deleteTask, editTask }) {
               </ModalFooter>
             </ModalContent>
           </Modal>
-
-          
-
-
-
         </span>
+        )}
+
       </div>
       <input 
             type="text"
