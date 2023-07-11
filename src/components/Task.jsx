@@ -1,15 +1,17 @@
 //import { useState, useEffect } from "react";
 import { useState } from "react";
 import { FaEdit, FaTrash } from "react-icons/fa";
+import { Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure } from "@chakra-ui/react";
 
 // eslint-disable-next-line react/prop-types
 export default function Task({ tarea, toggleTask, deleteTask, editTask }) {
   
-  
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   const handleDeleteTask = () => {
-    if (window.confirm("Esta seguro de BORRAR la tarea?")) {
+    
       deleteTask(tarea);
-    }
+    
   };
 
   const [editing, setEditing] = useState(false);
@@ -60,9 +62,27 @@ export default function Task({ tarea, toggleTask, deleteTask, editTask }) {
           <button className="boton-edit" onClick={() => handleEditing()}>
             <FaEdit size="1.6em" style={{ opacity: 0.7}}/>
           </button>
-          <button className="boton-borrar" onClick={() => handleDeleteTask()}>
+          <button className="boton-borrar" onClick={() => onOpen()}>
             <FaTrash size="1.6em" style={{ opacity: 0.7}}/>
           </button>
+
+          <Modal isOpen={isOpen} onClose={onClose}>
+            <ModalOverlay/>
+            <ModalContent>
+              <ModalHeader>Confirmación de Borrado</ModalHeader>
+              <ModalCloseButton/>
+              <ModalBody>Estas seguro de BORRAR esta TareApp?</ModalBody>
+              <ModalFooter>
+                <Button colorScheme="red" onClick={handleDeleteTask}>Borrar</Button>
+                <Button style={{ marginLeft: '10px' }} onClick={onClose}>Cancelar</Button>
+              </ModalFooter>
+            </ModalContent>
+          </Modal>
+
+          
+
+
+
         </span>
       </div>
       <input 

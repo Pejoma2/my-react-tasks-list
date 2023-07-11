@@ -33,11 +33,8 @@ export const useTask = () => {
 
     let taskUpperCase = taskname.toUpperCase();
 
-    if(!itemTarea.find((task) => task.nombre === taskUpperCase)){
-          setItemTarea([...itemTarea, { nombre: taskUpperCase, estado: false, id: index, descripcion: descripcion  }]);
-    }else{
-        alert("TareApp REPETIDA \n \n \nPor favor \nELIGE UN NOMBRE DIFERENTE")
-    }
+    setItemTarea([...itemTarea, { nombre: taskUpperCase, estado: false, id: index, descripcion: descripcion  }]);
+    
   }
 
 

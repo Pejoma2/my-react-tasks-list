@@ -2,16 +2,19 @@ import TaskCreator from "./TaskCreator";
 import Task from "./Task";
 import { useTask } from "../hooks/useTask";
 import TaskCounter from "./TaskCounter";
+import { Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure } from "@chakra-ui/react";
 
 export default function TaskList() {
 
   const {itemTarea, createTask, deleteTask, editTask, toggleTask, deleteAllTask} = useTask();
   
+  const { isOpen, onOpen, onClose} = useDisclosure();
 
   const handleDeleteAllTask = () => {
-    if (window.confirm("Esta seguro de BORRAR TODAS las tareas?")) {
+    
       deleteAllTask();
-    }
+      onClose();
+    
   };
 
   return (
@@ -28,7 +31,19 @@ export default function TaskList() {
                 editTask={editTask}
                 />
       ))}
-      <button className="borrar-todo" onClick={handleDeleteAllTask}>Borrar Todo</button>
+      <button className="borrar-todo" onClick={onOpen}>Borrar Todo</button>
+      <Modal isOpen = {isOpen} onClose={onClose}>
+          <ModalOverlay/>
+          <ModalContent>
+            <ModalHeader>Confirmación de Borrado</ModalHeader>
+            <ModalCloseButton/>
+            <ModalBody>Estas seguro de BORRAR todas las TareApps?</ModalBody>
+            <ModalFooter>
+              <Button colorScheme="red" onClick={handleDeleteAllTask}>Borrar</Button>
+              <Button style={{ marginLeft: '10px' }} onClick={onClose}>Cancelar</Button>
+            </ModalFooter>
+          </ModalContent>
+      </Modal>
 
       <TaskCounter itemTarea={itemTarea}/>
     </ul>

@@ -1,8 +1,12 @@
 import { useForm } from "react-hook-form";
-import { Button, Input } from '@chakra-ui/react'
+import { Input } from '@chakra-ui/react'
+
 
 // eslint-disable-next-line react/prop-types
 export default function TaskCreator({ createNewTask }) {
+  
+
+  
   const registerOptions = {
     tarea: {
       required: "Ingresa una TareApp",
