@@ -9,13 +9,7 @@
 
 
 
-.card {
-  padding: 2em;
-}
 
-.read-the-docs {
-  color: #888;
-}
 
 .tarea,
 .tarea-completada {
@@ -28,10 +22,9 @@
   border: solid 1px black;
   margin-top: 15px;
   padding: 7px;
-  border-radius: 3px;
-  background-color: rgb(241, 236, 236);
+  border-radius: 6px;
   transition: transform 0.4s ease-in-out;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.7);
 }
 
 .tarea-completada {

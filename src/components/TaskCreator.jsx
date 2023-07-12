@@ -1,12 +1,14 @@
 import { useForm } from "react-hook-form";
-import { Input } from '@chakra-ui/react'
-
+import { Input } from "@chakra-ui/react";
+import { useColorModeValue } from "@chakra-ui/react";
 
 // eslint-disable-next-line react/prop-types
 export default function TaskCreator({ createNewTask }) {
-  
+  const placeholderColor = useColorModeValue(
+    "blackAlpha.600",
+    "whiteAlpha.600"
+  );
 
-  
   const registerOptions = {
     tarea: {
       required: "Ingresa una TareApp",
@@ -17,11 +19,16 @@ export default function TaskCreator({ createNewTask }) {
       maxLength: {
         value: 40,
         message: "Tu TareApp MAXIMO debe tener 40 letras",
-      }
+      },
     },
   };
 
-  const { register, handleSubmit, formState: { errors }, reset } = useForm({ mode: "onChange" });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({ mode: "onChange" });
 
   const onSubmit = (data) => {
     createNewTask(data.tarea, data.descripcion);
@@ -34,7 +41,7 @@ export default function TaskCreator({ createNewTask }) {
         borderColor="black"
         w="95%"
         mt="50px"
-        _placeholder={{ color: 'black', fontWeight: 'semibold', opacity: 0.3}}
+        _placeholder={{ color: placeholderColor, fontWeight: "semibold" }}
         //variant="outline"
         name="tarea"
         id="nueva-tareapp"
@@ -53,7 +60,7 @@ export default function TaskCreator({ createNewTask }) {
       <Input
         borderColor="black"
         w="95%"
-        _placeholder={{ color: 'black', fontWeight: 'semibold', opacity: 0.3}}
+        _placeholder={{ color: placeholderColor, fontWeight: "semibold" }}
         name="descripcion"
         id="nueva-descripcion"
         className="nueva-tarea"
@@ -66,4 +73,3 @@ export default function TaskCreator({ createNewTask }) {
     </form>
   );
 }
-
